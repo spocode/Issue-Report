@@ -1,0 +1,4 @@
+name = SpoCode
+description = "Contains custom blocks and coding specific to the site."
+core = 7.x
+package = SpoCode

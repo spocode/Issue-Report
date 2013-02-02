@@ -1,0 +1,41 @@
+<?php
+
+
+/**
+ * Implements hook_block_info().
+ *
+ * @return array
+ */
+function spocode_helper_block_info() {
+  $blocks['footer_message'] = array(
+    'info' => t('Footer message'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+  return $blocks;
+}
+
+
+/**
+ * Implements hook_block_view().
+ */
+function spocode_helper_block_view($delta) {
+  $block = array();
+  switch ($delta) {
+    case 'footer_message':
+      $block['subject'] = t('Footer message');
+      $block = spocode_helper_footer_message();
+      break;
+  }
+  return $block;
+}
+
+
+/**
+ *
+ * Footer menu with dynamic date and links to other pages
+ *
+ **/
+function spocode_helper_footer_message() {
+  $output['content'] = '©' . date('Y') . ' ' . t('SpoCode');
+  return $output;
+}

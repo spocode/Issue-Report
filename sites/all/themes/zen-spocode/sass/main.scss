@@ -1,0 +1,211 @@
+@import "_colors";
+@import "compass/css3"; 
+
+/* Global styling */
+
+body {
+	color: $claret;
+}
+
+a {
+	text-decoration: none;
+	color: $d-green;
+	&:hover {
+		color: $brown;
+	}
+}
+
+/* Header styling */
+
+#header {
+	padding: 10px;
+	background: $d-green;
+	color: $l-green;
+	font-family: 'Monda', sans-serif;
+	.container {
+		margin-left: auto;
+  		margin-right: auto;
+  		max-width: 1200px;
+	}
+	a {
+		color: $l-green;
+	}
+	#site-name {
+		font-size: 2.5em;
+		line-height: 2em;
+		margin-left: 40px;
+		a {
+			color: $l-green;
+			text-shadow: 2px 2px 0px $claret;
+		}
+	}
+	#logo img {
+		max-width: 150px;
+	}
+}
+
+/* Nav styling */
+
+#navigation {
+	margin: 20px 0;
+	height: 5em;
+	li {
+		padding-right: 10px;
+		margin-right: 10px;
+		border-right: 2px solid $green;
+		&:last-child {
+			border: none;
+		}
+		a {
+			color: $brown;
+			&.active, &:hover {
+				color: $d-green;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* Posts styling */
+
+#content {
+	margin-top: 22px;
+}
+
+.sidebars {
+	margin-top: 20px;
+	@include clearfix;
+	h2 {
+		font-family: 'Monda', sans-serif;
+		font-weight: normal;
+	}
+}
+
+#page-title {
+	font-family: 'Monda', sans-serif;
+	color: $brown;
+	padding-bottom: 5px;
+	margin-bottom: 40px;
+	border-bottom: 2px solid $d-green;
+}
+
+.views-row {
+	padding-bottom: 20px;
+	margin-bottom: 40px;
+	border-bottom: 1px solid $green;
+	.group-right {
+		margin-top: -5px;
+	}
+	.field-type {
+		font-size: 90%;
+	}
+	.field-description {
+		margin-bottom: 20px;
+	}
+}
+.field-label{
+	font-weight: bold;
+	margin-top: -5px;
+} 
+.field-image img {
+	max-width: 400px;
+}
+.field-location {
+	margin-top: 20px;
+}
+
+#view-id-issues-block_1 .views-row {
+	border: none;
+}
+
+/*Comments styling */
+
+#comment-body-add-more-wrapper .filter-wrapper { display: none; }
+
+/* Slideshow styling */
+
+.field-slideshow-controls {
+	margin: 10px 0 20px;
+}
+
+/* Form styling */
+
+html.js input.form-autocomplete {
+	background-position: 100% 5px;
+}
+
+form {
+	.form-item {
+		textarea, select, 
+		input[type="date"], input[type="datetime"], 
+		input[type="datetime-local"], input[type="email"], 
+		input[type="month"], input[type="number"], 
+		input[type="password"], input[type="search"], 
+		input[type="tel"], input[type="text"], 
+		input[type="time"], input[type="url"], input[type="week"] {
+			height: 2.1em;
+			width: 50%;
+			@include border-radius(5px);
+			border-width: 2px;
+			&:focus {
+				border-color: $green;
+				outline-color: $l-green;
+			}
+		}
+
+		.resizable-textarea {
+			textarea {
+				@include border-radius(5px 5px 0 0);
+			}
+			.grippie {
+				width: 49.8%;
+			}
+		}
+		.description {
+			font-size: 0.75em;
+		}
+	}
+	input.geofield-gmap-search {
+		height: 2.1em;
+		width: 50%;
+		@include border-radius(5px);
+		border-width: 2px;
+		&:focus {
+			border-color: $d-green;
+			outline-color: $l-green;
+		}
+	}
+	.geofield-gmap-cnt {
+		width: 50%;
+		margin-top: 20px;
+	}
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+	.fieldset-legend {
+		font-weight: bold;
+	}
+}
+
+input[type="submit"], .button, button, a.prev, a.next {
+	padding: 5px 10px;
+	@include border-radius(5px);
+	background-color: #193338; // Old browsers
+	@include filter-gradient(#7f8a63, #193338, vertical); // IE6-9
+	@include background-image(linear-gradient(top, #7f8a63 0%,#193338 100%));
+	border: 1px solid $d-green;
+	color: $l-green;
+	text-shadow: 1px 1px 1px $claret;
+	&:hover {
+		background-color: #193338; // Old browsers
+		@include filter-gradient(#193338, #7f8a63, vertical); // IE6-9
+		@include background-image(linear-gradient(top, #193338 0%, #7f8a63 100%));
+	}
+}
+
+button + button, input[type="submit"] + input[type="submit"], a.prev + a.next {
+	margin-left: 20px;
+}

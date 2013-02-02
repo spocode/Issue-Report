@@ -1,0 +1,1 @@
+window.CKEDITOR_BASEPATH = '/freelance/spocode/sites/all/libraries/ckeditor/';
